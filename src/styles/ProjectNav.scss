@@ -12,6 +12,7 @@ font-family: 'Roboto Slab', serif;
 /* font-family: 'Noto Sans KR', sans-serif; */
 
 .projectnav{
+    position: fixed;
     display: flex;
     .navbox{
         margin-top: 10px;

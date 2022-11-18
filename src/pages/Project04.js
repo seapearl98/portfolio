@@ -7,21 +7,21 @@ function Project04() {
         <div className='boxes'>
             <div className='leftbox'>
                 <div className='desktop'>
-                    <img src="../img/desktop.png" alt="데스크탑 목업" />
+                    <img src="img/desktop.png" alt="데스크탑 목업" />
                     <div className='inner'>
-                    <img src="../img/cj_desk.jpeg" alt="" />  
+                    <img src="img/cj_desk.jpeg" alt="" />  
                     </div>
                 </div>
                 <div className='tablet'>
-                    <img src="../img/tablet.png" alt="타블렛 목업" />
+                    <img src="img/tablet.png" alt="타블렛 목업" />
                     <div className='inner'>
-                    <img src="../img/cj_tablet.jpeg" alt="cj타블렛사이즈이미지"/>  
+                    <img src="img/cj_tablet.jpeg" alt="cj타블렛사이즈이미지"/>  
                     </div>
                 </div>
                 <div className='mobile'>
-                    <img src="../img/mobile.png" alt="모바일 목업 이미지" />
+                    <img src="img/mobile.png" alt="모바일 목업 이미지" />
                     <div className='inner'>
-                    <img src="../img/cj_mobile.jpeg" alt="cj모바일사이즈" />  
+                    <img src="img/cj_mobile.jpeg" alt="cj모바일사이즈" />  
                     </div>
                 </div>
                 <div className='button'>

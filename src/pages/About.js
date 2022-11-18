@@ -28,7 +28,7 @@ function About({IoMdRefresh}) {
         </div>
         <div className="rightbox">
             <div className='imgbox'>
-                <img src="../img/mypic.png" alt="내 사진" />
+                <img src="img/mypic.png" alt="내 사진" />
             </div>
             <div className='colorbox'></div>
         </div>
