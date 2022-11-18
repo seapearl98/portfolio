@@ -20,7 +20,7 @@ function ProjectNav({IoMdRefresh}) {
           </li>
           <li className='nav3'>
             <span>NETFLIX</span>
-            <img src="./img/blink.png" alt="반짝이" />
+            <img src="img/blink.png" alt="반짝이" />
           </li>
         </ul>
         <span><Link to='/'><IoMdRefresh/></Link></span>
