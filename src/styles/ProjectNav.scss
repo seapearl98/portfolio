@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&family=Roboto+Serif:opsz,wght@8..144,700&family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/* roboto */
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+font-family: 'Roboto Serif', serif;
+font-family: 'Roboto Slab', serif;
+*/
+/* notosans kr */
+/* font-family: 'Noto Sans KR', sans-serif; */
+
+.projectnav{
+    display: flex;
+    .navbox{
+        margin-top: 10px;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 580px;
+        li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                img{
+                    opacity: 0;
+                    padding-top: 5px;
+                    display: flex;
+                    flex: 1;
+                    justify-content: space-between;
+                    width: 50px;
+                    z-index: 10;
+                    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.25));
+                }
+        }
+        .on>img{opacity: 1;}
+        li>span{
+            flex: content;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.4;
+            padding: 5px 15px;
+            background: #FFF;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 30px;
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #0049D8 ;
+            filter: drop-shadow(6px 6px 0px rgba(0,0,0,0.25));
+        }
+        .on>span{background: #fff280;}
+    }
+    svg{
+        margin-top: 18px;
+        font-size: 40px;
+        color: #99BCFF;
+        filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.25));
+    }
+}

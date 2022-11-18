@@ -1,0 +1,17 @@
+.projectpage{
+    background: #0046CE;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    .projectnav{width: 100%; height: 8%;}
+    .projects{
+        width: 400%; height: 92%;
+        display: flex;
+        overflow: hidden;
+        .project{
+            position: relative;
+            left: 0%;
+            width: 25%;
+        }
+    }
+}

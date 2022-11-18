@@ -1,0 +1,17 @@
+.nav{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0; right: 0;
+    padding-bottom:2rem;
+    padding-right: 100px;
+    display: inline-block;
+    width: 18%;
+    text-align: right;
+    .navigate{
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 2rem;
+        text-shadow: none;
+        padding: 30px 20px;
+    }
+}
