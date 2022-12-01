@@ -2,3 +2,6 @@ a{
     text-decoration: none;
     color: #0049D8;
 }
+div,section{
+    background: #0049D8;
+}

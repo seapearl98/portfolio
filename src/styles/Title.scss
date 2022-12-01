@@ -13,35 +13,67 @@ font-family: 'Roboto Slab', serif;
 
 .title{
     width: 100%;
-    height: 100vh;
     background: #0046CE;
     color: #fff;
     padding: 0 100px;
     box-sizing: border-box;
+    border: 1px solid #000;
     h1{
+        position: relative;
+        overflow: hidden;
         font-size: 16rem;
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
         // text-shadow: 10px 0px 0px rgb(160, 225, 255);
         letter-spacing: 2px;
+        animation: h1 1.5s ease 0.1s 1;
+        box-sizing: border-box;
     }
-    span{
+    @keyframes h1 {
+        0%{left: -800px; opacity: 0.2;}
+        50%{opacity: 0.5;}
+        100%{left: 0; opacity: 1;}
+    }
+    .developer{
+        position: relative;
+        overflow: hidden;
         display: inline-block;
         font-size: 10rem;
         font-family: 'Roboto Serif', serif;
         font-weight: 500;
         color: #FFF280;
         margin-top: -2rem;
-        text-shadow: 5px 0px 0px rgba(0,0,0,0.2);
+        text-shadow: 10px 0px 0px rgba(0,0,0,0.2);
+        animation: developer 2s ease 0s 1;
+        box-sizing: border-box;
+    }
+    @keyframes developer {
+        0%{left: 1000px;}
+        100%{left: 0;}
     }
     .line{
+        z-index: 10;
+        position: relative;
         display: block;
         margin-top: 0.2rem;
         height: 3px;
         border-radius: 50px;
         background: #fff;
+        animation: line 2s ease 0s 1;
+        box-sizing: border-box;
+    }
+    @keyframes line {
+        0%{width: 0;}
+        100%{width: 100%;}
+    }
+    @keyframes p {
+        0%{top: 1000px; opacity: 0;}
+        50%{top: 100px; opacity: 0.5;}
+        100%{top: 0; opacity: 1;}
     }
     p{
+        z-index: 3;
+        position: relative;
         font-size: 2.5rem;
         letter-spacing: 1px;
         color: #99BCFF;
@@ -49,23 +81,39 @@ font-family: 'Roboto Slab', serif;
         text-align: right;
         padding: 16px 0;
         font-family: 'Noto Sans KR', sans-serif; 
+        animation: subtitle 1.5s ease 0s 1;
+        box-sizing: border-box;
     }
     h2{
+        z-index: 3;
+        position: relative;
         font-size: 5rem;
         text-align: right;
         font-weight: bold;
         font-family: 'Noto Sans KR', sans-serif; 
         text-shadow: -2px 0px 0px rgba(0,0,0,0.25);
+        animation: subtitle 2s ease 0s 1;
+        box-sizing: border-box;
+    }
+    @keyframes subtitle {
+        0%{top: 100%;}
+        100%{top: 0;}
+    }
+    @keyframes subtitle2 {
+        0%{top: 100%;}
+        100%{top: 70px;}
     }
     strong{
         color: #FFE600;
     }
     h3{
-        font-size:16rem;
+        font-size:22rem;
         font-family: 'Roboto Serif', serif;
-        position: absolute;
-        bottom: 0; left: 100px;
+        position: relative;
+        top: 70px; left: -110px;
         font-weight: 900;
         color: #0363f37c;
+        animation: subtitle2 1s ease 0s 1;
+        vertical-align: middle;
     }
 }

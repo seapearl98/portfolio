@@ -11,11 +11,14 @@ font-family: 'Roboto Slab', serif;
 /* notosans kr */
 /* font-family: 'Noto Sans KR', sans-serif; */
 
-.project{
+div>.project{
     width: 100%;
     height: 90vh;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     box-sizing: border-box;
+    overflow: hidden;
     h2{
         box-sizing: border-box;
         position: absolute;
@@ -40,10 +43,12 @@ font-family: 'Roboto Slab', serif;
         }
     }
     .boxes{
-        padding: 15% 200px 0 200px;
+        margin: 15% 200px 0 200px;
         display: flex;
         justify-content: space-between;
+        box-sizing: border-box;
         .leftbox{
+            z-index: 1;
             position: relative; top: -10%;
             background: #FFF280;
             width: 35%;
@@ -139,6 +144,7 @@ font-family: 'Roboto Slab', serif;
             }
         }
         .rightbox{
+            z-index: 1;
             color: #fff;
             position: relative;
             top: -15%;
@@ -188,4 +194,9 @@ font-family: 'Roboto Slab', serif;
     0%{transform: translateY(0);}
     50%{transform: translateY(-65%);}
     100%{transform: translateY(0);}
+}
+
+.project.on{
+    position: relative;
+    left: 0;
 }

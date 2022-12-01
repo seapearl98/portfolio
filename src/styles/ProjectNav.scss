@@ -12,8 +12,11 @@ font-family: 'Roboto Slab', serif;
 /* font-family: 'Noto Sans KR', sans-serif; */
 
 .projectnav{
-    position: fixed;
+    position:fixed;
+    left: 0; top: 0;
     display: flex;
+    background: none;
+    box-sizing: border-box;
     .navbox{
         margin-top: 10px;
         padding: 0 10px;
@@ -22,6 +25,8 @@ font-family: 'Roboto Slab', serif;
         justify-content: center;
         width: 580px;
         li{
+            border: 1px solid #000;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: center;

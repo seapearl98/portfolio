@@ -1,0 +1,40 @@
+// body{
+//     overscroll-behavior: none;colsection:not(#sectionPin) {
+//         transition: 0.3s ease-out;
+//         overflow-x: hidden;
+//         max-width: 100%;
+//         width: 100%;
+//         overscroll-behavior: none;
+//       }
+//       }
+
+// .pin-wrap {
+//     width: 100%;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: flex-start;
+//     .project{
+//         h2{width: 100%;}
+//     }
+//   }
+//   #sectionPin {
+//     width: 400%;
+//     height: 100vh;
+//     overflow: hidden;
+//     display: flex;
+//     left: 0;
+//     background: var(--text-color);
+//     color: var(--bg-color);
+//   }
+
+.Page{
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    section{
+        width: 100vw;
+        box-sizing: border-box;
+        padding-top: 70px;
+        height: 100vh;
+    }
+}

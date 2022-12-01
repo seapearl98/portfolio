@@ -4,15 +4,17 @@ import '../styles/Title.scss'
 
 function Title() {
   return (
-    <div className='title'>
+    <>
+    <section className='title' id='title'>
         <h1>FRONT-END</h1>
-        <span>DEVELOPER</span>
+        <span className='developer'>DEVELOPER</span>
         <div className='line'></div>
         <p>언제나 한 발자국 이상 발전하고 싶은</p>
         <h2>프론트엔드 <strong>이해주</strong>입니다.</h2>
         <h3>Portfolio</h3>
-        <Nav className='component'/>
-    </div>
+        {/* <Nav className='component'/> */}
+    </section>
+    </>
   )
 }
 

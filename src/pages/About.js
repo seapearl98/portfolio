@@ -4,36 +4,35 @@ import '../styles/About.scss'
 
 function About({IoMdRefresh}) {
   return (
-    <div className='about'>
+    <section className='about'>
         <div className='me'>
-            <div>About me</div>
-            <span><Link to='/'><IoMdRefresh/></Link></span>
+            <div className='aboutme'>About me</div>
         </div>
-        <div className='leftbox'>
-            <div>
-                <div>Channel</div>
-                <span className='github'><a href="https://github.com/seapearl98" target={'_blank'}>Github</a></span>
-                <div className='line'></div>
+        <div className='about_totalbox'>
+            <div className='leftbox'>
+                    <div>Channel</div>
+                    <span className='github'><a href="https://github.com/seapearl98" target={'_blank'}>Github</a></span>
+                    <div className='line'></div>
+                <div className='skill'>
+                    <div>Skill</div>
+                    <span>HTML, CSS, Javascript, React</span>
+                    <div className='line'></div>
+                </div>
+                <div>
+                    <div>ETC</div>
+                    <span>Photoshop, ilustrator, Figma</span>
+                    <div className='line'></div>
+                </div>
             </div>
-            <div className='skill'>
-                <div>Skill</div>
-                <span>HTML, CSS, Javascript, React</span>
-                <div className='line'></div>
-            </div>
-            <div>
-                <div>ETC</div>
-                <span>Photoshop, ilustrator, Figma</span>
-                <div className='line'></div>
+            <div className="rightbox">
+                <div className='imgbox'>
+                    {/* <img src={require('/img/mypic.png').default} alt='my_picture'/> */}
+                    <img src='/src/img/mypic.png' alt='my_picture'/>
+                </div>
+                <div className='colorbox'></div>
             </div>
         </div>
-        <div className="rightbox">
-            <div className='imgbox'>
-                <img src="img/mypic.png" alt="내 사진" />
-            </div>
-            <div className='colorbox'></div>
-        </div>
-
-    </div>
+    </section>
   )
 }
 

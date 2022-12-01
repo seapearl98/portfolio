@@ -1,9 +1,10 @@
 import React from 'react'
 import '../styles/Project01.scss'
+import ProjectNav from './ProjectNav'
 
 function Project01() {
   return (
-    <div className='project'>
+    <section className='project' id='Project_one'>
         <h2>project<span>CJONE</span></h2>
         <div className='boxes'>
             <div className='leftbox'>
@@ -26,8 +27,8 @@ function Project01() {
                     </div>
                 </div>
                 <div className='button'>
-                    <span><a href="https://seapearl98.github.io/CJONE/" target={'_blank'}>detail view</a></span>
-                    <span>visit website</span>
+                    <span>detail view</span>
+                    <span><a href="https://seapearl98.github.io/CJONE/" target={'_blank'}>visit website</a></span>
                 </div>
             </div>
             <div className='rightbox'>
@@ -55,7 +56,7 @@ function Project01() {
                 </dl>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 
