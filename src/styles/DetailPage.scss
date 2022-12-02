@@ -12,90 +12,90 @@ font-family: 'Roboto Slab', serif;
 /* font-family: 'Noto Sans KR', sans-serif; */
 
 
-// .detailpage{
-//     width: 100%;
-//     background: #0049D8;
-//     .container{
-//         position: relative;
-//         border: 1px solid #000;
-//         width: 100%;
-//         height: 100%;
-//         padding: 2%;
-//         box-sizing: border-box;
-//     }
-//     .detailview{
-//         z-index: 1;
-//         display: inline-block;
-//         font-size: 120px;
-//         font-family: 'Roboto Serif', serif;
-//         text-shadow: 3px 1px 0px #FFF280, 0 0 0 #000, 3px 1px 0px #FFF280;
-//         box-shadow: 15px 15px 0 rgba(0,0,0,0.25);
-//         font-weight: bold;
-//         background: #FFF280;
-//         color: rgba(0, 66, 199, 0.896);
-//         padding: 10px;
-//     }
-//     .refresh svg{
-//         display: inline-block;
-//         font-size: 50px;
-//         font-weight: 800;
-//         color: #99BCFF;
-//         vertical-align: bottom;
-//         text-shadow: 3px 3px 0px #000;
-//     }
-//     .leftbox{
-//         position: absolute;
-//         border: 1px solid #000;
-//         top: 55%;
-//         transform: translateY(-50%);
-//         left: 7%;
-//         width: 25%;
-//         height: 60%;
-//         box-sizing: border-box;
-//     }
-//     .leftbox>span{
-//         font-size: 120px;
-//         display: block;
-//         font-family: 'Roboto', sans-serif;
-//         font-weight: 700;
-//         color: #99BCFF;
-//     }
-//     .leftbox>span:nth-of-type(1){position: absolute; left: 0; top: 0;}
-//     .leftbox>span:nth-of-type(2){position: absolute; right: 0; top: 20%;}
-//     .textbox{
-//         position: absolute;
-//         top: 45%;
-//         color: #fff;
-//     }
+.detailpage{
+    width: 100%;
+    background: #0049D8;
+    .container{
+        position: relative;
+        border: 1px solid #000;
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+    .detailview{
+        z-index: 1;
+        display: inline-block;
+        font-size: 120px;
+        font-family: 'Roboto Serif', serif;
+        text-shadow: 3px 1px 0px #FFF280, 0 0 0 #000, 3px 1px 0px #FFF280;
+        box-shadow: 15px 15px 0 rgba(0,0,0,0.25);
+        font-weight: bold;
+        background: #FFF280;
+        color: rgba(0, 66, 199, 0.896);
+        padding: 10px;
+    }
+    .refresh svg{
+        display: inline-block;
+        font-size: 50px;
+        font-weight: 800;
+        color: #99BCFF;
+        vertical-align: bottom;
+        text-shadow: 3px 3px 0px #000;
+    }
+    .leftbox{
+        position: absolute;
+        border: 1px solid #000;
+        top: 55%;
+        transform: translateY(-50%);
+        left: 7%;
+        width: 25%;
+        height: 60%;
+        box-sizing: border-box;
+    }
+    .leftbox>span{
+        font-size: 120px;
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        color: #99BCFF;
+    }
+    .leftbox>span:nth-of-type(1){position: absolute; left: 0; top: 0;}
+    .leftbox>span:nth-of-type(2){position: absolute; right: 0; top: 20%;}
+    .textbox{
+        position: absolute;
+        top: 45%;
+        color: #fff;
+    }
 
 
-//     .rightbox{
-//         width: 35%; height: 50%;
-//         position: absolute;
-//         right: 250px; top: 30%;
-//         background: #FFF280;
-//         .imagebox{
-//             width: 35%;
-//             height: 55%;
-//             position: relative;
-//             display: inline-block;
-//             box-shadow: -20px 20px 4px rgba(0,0,0,0.25);
-//             .image1{
-//                 z-index: 2; position: absolute;
-//                 img{
-//                     width: 600px;
-//                 }
-//             }
-//             .image2{z-index: 3; position: absolute;
-//                 img{
-//                     width: 400px;
-//                 }
-//             }
-//             .image3{z-index: 1; position: absolute;
-//                 img{
-//                     width: 400px;
-//                 }
-//             } 
-//         }
-//     }
-// }
+    .rightbox{
+        width: 35%; height: 50%;
+        position: absolute;
+        right: 250px; top: 30%;
+        background: #FFF280;
+        .imagebox{
+            width: 35%;
+            height: 55%;
+            position: relative;
+            display: inline-block;
+            box-shadow: -20px 20px 4px rgba(0,0,0,0.25);
+            .image1{
+                z-index: 2; position: absolute;
+                img{
+                    width: 600px;
+                }
+            }
+            .image2{z-index: 3; position: absolute;
+                img{
+                    width: 400px;
+                }
+            }
+            .image3{z-index: 1; position: absolute;
+                img{
+                    width: 400px;
+                }
+            } 
+        }
+    }
+}
