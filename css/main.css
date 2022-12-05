@@ -1,0 +1,483 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&family=Roboto+Serif:opsz,wght@8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&family=Roboto+Slab:wght@700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+/* roboto */
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Flex', sans-serif;
+font-family: 'Roboto Serif', serif;
+font-family: 'Roboto Slab', serif;
+*/
+/* notosans kr */
+/* font-family: 'Noto Sans KR', sans-serif; */
+
+/* 공통 */
+
+a,a:visited{
+    color: #0049D8;
+    text-decoration: none;
+}
+
+/* 로딩페이지 */
+
+.load{
+    z-index: 10000;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    background: #0049D8;
+    transition: top 0.4s ease-in-out 0s;
+}
+.load.totop{
+    position: absolute;
+    top: -100vh;
+}
+
+@keyframes totop {
+    0%{top: 0;}
+    100%{top: 100%;}
+}
+
+.bulb{
+    z-index: 1;
+    position: relative;
+    font-size: 400px;
+    transform: translateY(50%);
+    color: #f9f9f9;
+    transition: transform 0.7s ease-in 4s;
+    filter: drop-shadow(10px 10px 0px rgba(0,0,0,0.2));
+}
+.sparkle.L{
+    opacity: 0;
+    position: absolute; 
+    left: 33%;
+    top: 33%;
+    transform: rotate(90deg);
+}
+.sparkle.R{
+    opacity: 0;
+    position: absolute; 
+    left: 56%;
+    top: 33%;
+    transform: rotate(-90deg);
+}
+.sparkle.colorChange{
+    opacity: 1;
+    animation: blink 2s linear 1s;
+}
+
+.loadline{
+    position: absolute;
+    left: 50%; top:72%;
+    transform: translateX(-50%);
+    transform-origin: -100%, 0;
+    width: 300px; height: 26px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 3px solid #f9f9f9;
+    overflow: hidden;
+}
+
+.line{
+    position: absolute;
+    left: 0;top: 50%;
+    transform: translateY(-50%);
+    background: #f9f9f9;
+    border-radius: 10px;
+    width: 96.5%; height: 10px;
+    margin: 0 5px;
+    animation: loadline 4s linear;
+}
+
+.loadtext{
+    position: absolute;
+    top: 76%; left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0 auto;
+    font-size: 24px;
+    color: #f9f9f9;
+    font-family: 'Roboto Slab', serif;
+
+}
+.line.colorChange{background: #FFE923;}
+.colorChange{color: #FFE923;}
+.loadline.colorChange{border: 3px solid #FFE923;}
+@keyframes loadline {
+    0%{width: 0;}
+    100%{width: 97%;}
+}
+
+@keyframes blink {
+    0%{opacity: 1;}
+    25%{opacity: 0;}
+    50%{opacity: 1;}
+    75%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.bulb.colorChange{transform: scale(100);}
+
+/* 각섹션 */
+main{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    background: #0049D8;}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #fff;
+    background: #0049D8;
+}
+main>.projects>.project{
+    position: relative; top: -70px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 200px;
+}
+main>.projects>section>h2{
+    position: relative;
+    text-align: right;
+    display: block; width: 100%;
+    font-size: 70px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 200;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
+    color: #fff;
+    padding-right: 200px;
+}
+
+
+main>.projects>section>.boxes{
+    position: relative;
+    margin: 15% 200px 0 200px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+main>.projects>section>.boxes>.leftbox{
+    z-index: 1;
+    position: relative; top: -10%;
+    background: #FFF280;
+    width: 35%;
+    height: 65%;
+    border: 1px solid #000;
+}
+main>.projects>section>.boxes>.leftbox>.button{
+    width: 65%;
+    position: absolute;
+    top: 140%; left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+main>.projects>section>.boxes>.leftbox>.button>span{
+    flex: content;
+    font-size: 20px;
+    font-family: 'Roboto Serif', serif;
+    font-weight: bold;
+    padding: 15px 20px;
+    background: #FFF280;
+    color: #0049D8;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.25);
+}
+main>.projects>section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
+
+.rightbox{
+    z-index: 1;
+    color: #fff;
+    position: relative;
+    top: -15%;
+    width: 45%;
+    height: 50%;
+    font-family: 'Noto Sans KR', sans-serif;}
+
+
+.desktop{
+    position: absolute; 
+    display: inline-block;
+    z-index: 3; left: 50%; transform: translateX(-50%); bottom: -30%;
+}
+.desktop>img{
+    width: 500px;
+    filter: drop-shadow(-20px -20px 4px rgba(0,0,0,0.25));
+}
+.desktop>.inner{
+    position: absolute; top: 3%;
+    left: 50.4%; transform: translateX(-50%);
+    background: #fff;
+    width: 79.5%; height: 248.5px;
+    overflow: hidden;}
+.desktop>.innerimg{
+    width: 100%;
+    animation: cjdesk 15s linear infinite;
+}
+@keyframes cjdesk {
+    0%{transform: translateY(0);}
+    5%{transform: translateY(0);}
+    50%{transform: translateY(-65%);}
+    55%{transform: translateY(-65%);}
+    100%{transform: translateY(0);}
+}
+
+.tablet{
+    position: absolute; z-index: 1;
+    left: -15%; top: -25%;}
+.tablet>img{
+    position: relative;
+    width: 250px;
+    transform: rotate(90deg);
+    filter: drop-shadow(20px -20px 4px rgba(0,0,0,0.25));
+}
+.tablet>.inner{
+    z-index: 1;
+    position: absolute; 
+    left: -14.5%; top: 17.5%; 
+    width: 320px; height: 224px;
+    border-radius: 7px; 
+    overflow: hidden;}
+.tablet>.inner>img{
+    z-index: 1;
+    transform: rotate(0deg);
+    display: block;
+    width: 100%;
+    animation: cjtablet 20s linear infinite;
+}
+@keyframes cjtablet {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-80%);}
+    100%{transform: translateY(0);}
+}
+
+.mobile{
+    position: absolute; 
+    z-index: 2; 
+    top: 13%; right: -22%;}
+.mobile>img{
+    width: 150px;
+    filter: drop-shadow(-40px -20px 4px rgba(0,0,0,0.25));
+}
+.mobile>.inner{
+    position: absolute;
+    box-sizing: border-box;
+    top: 2%; left: 50%;
+    transform: translateX(-50%);
+    background: #fdf;
+    width: 89.5%; height: 292px;
+    border-radius: 20px;
+    overflow: hidden;}
+.mobile>.inner>img{
+    position: absolute;
+    width: 100%;
+    border-radius: 18px;
+    animation: cjmobile 15s linear infinite;
+}
+/* title */
+main>.title{
+    position: relative;
+    width: 100%;
+    color: #fff; 
+    box-sizing: border-box;
+}
+.title>h1{
+    display: inline-block;
+    border: 1px solid #000;
+    position: absolute;
+    top: 200px; left: 250px;
+    text-align: center;
+    filter: drop-shadow(10px 10px 0 rgba(0,0,0,0.2));
+    overflow: hidden;
+    font-size: 13rem;
+    font-family: 'Shrikhand', cursive;
+    padding: 0 20px;
+}
+.developer{
+    z-index: 1;
+    position: absolute;
+    top: 450px; left: 40%;
+    display: block;
+    text-align: center;
+    font-size: 8rem;
+    font-family: 'Shrikhand', cursive;
+    color: #FFF280;
+    margin-top: -2rem;
+    text-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+}
+.title>h2{
+    width: 100%;
+    position: absolute;
+    bottom: 50px; left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    text-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+
+
+/* projectnav */
+.projects{
+    position: relative; top: 0;
+}
+.project:nth-of-type(1){height: calc(100vh - 70px);}
+.sticky{
+    z-index: 10;
+    position: sticky; top: 15px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+div>.navbox{
+    position: relative;
+    width: 600px;
+    display: flex;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    gap: 15px;
+}
+div>.navbox>li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    filter: drop-shadow(6px 6px 0px rgba(0,0,0,0.20));
+}
+div>.navbox>li.on>span{background: #FFE923;}
+div>.navbox>li.on>img{opacity: 1;}
+div>.navbox>li>span{
+    display: inline-block;
+    background: #fff;
+    border-radius: 60px;
+    color: #0049d8;
+    margin-bottom: 10px;
+    padding: 8px 0px;
+}
+div>.navbox>li>img{
+    opacity: 0;
+    width: 40%; margin: 0 auto;
+}
+/* contact */
+.contact{
+    position: relative;
+    bottom: 0;
+}
+.contact>h2{        
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 16rem;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: bold;
+    text-shadow: 15px 15px 0px rgba(0,0,0,0.25);
+    padding-bottom: 100px;
+    padding-top: 24px;}
+.contact>.contact_box{
+    position: absolute;
+    left: 50%; top: 40%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    text-align: center;
+    width: 600px; height: 300px;
+    background: #fff;
+    box-shadow: 40px 40px 0px rgba(0,0,0,0.25);}
+.box_inner{
+    position: absolute;
+    left: 50%; transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    width: 95%; height: 90%;
+    background: #fff;
+    border: 2px solid #0049D8;}
+.box_inner>p{
+    font-size: 2rem;
+    color: #1D4672;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+}
+.tel{margin-top: 95px;}
+
+/* 어바웃 */
+.about{
+    position: relative;
+    width: 100%; height: 100vh;
+    padding: 50px 200px;
+    box-sizing: border-box;}
+.about>.me{
+    color: #fff; 
+    font-size: 4rem;
+    font-family: 'Roboto Serif', serif;
+}
+.about>.about_totalbox{
+    position: relative;
+    width: 100%; height: 700px;
+    border: 1px solid #000;}
+.about>.about_totalbox>.leftbox{
+    border: 1px solid #ff0;
+    margin-top: 180px;
+    display: inline-block;
+    width: 40%;
+    height: 50%;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: right;
+    line-height: 50px;
+    margin-right: 100px;
+    margin-left: 200px;}
+.about>.about_totalbox>.leftbox>.skill{text-align: left;}
+.about>.about_totalbox>.leftbox>span{
+    display: block;
+    padding: 10px 0 0 0;
+    font-weight: normal;
+    font-size: 25px;
+}
+.about>.about_totalbox>.leftbox>.skill .underline{
+    display: block;
+    width: 100%; height: 1px;
+    background: rgb(150, 54, 54);
+}
+.about>.about_totalbox>.leftbox>.github{
+    position: relative;
+                top: 15px;
+                font-size: 40px;
+                font-weight: 600;
+                display: inline-block;
+                background: #FFF280;
+                color: #0049D8;
+                padding: 0px 10px;
+                border-radius: 30px;
+                margin-bottom: 30px;
+                filter: drop-shadow(8px 8px 0px rgba(0,0,0,0.25));
+                text-shadow: 2px 2px 0px rgba(0,0,0,0.25);
+}
+.about>.about_totalbox>.rightbox{
+    position: absolute;
+    top: 150px; right: 200px;
+    width: 20%;
+    display: inline-block;}
+.about>.about_totalbox>.rightbox>.imgbox{
+    position:   absolute;
+    width: 100%;}
+.about>.about_totalbox>.rightbox>.imgbox>img{
+    position: absolute;
+    width: 100%;
+    box-shadow: 40px 40px 0px #FFF280;
+}
+
