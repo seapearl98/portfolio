@@ -217,7 +217,7 @@ section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
     background: #fff;
     width: 79.5%; height: 248.5px;
     overflow: hidden;}
-.desktop>.innerimg{
+.desktop>.inner>img{
     width: 100%;
     animation: cjdesk 15s linear infinite;
 }
@@ -257,6 +257,13 @@ section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
     50%{transform: translateY(-80%);}
     100%{transform: translateY(0);}
 }
+
+@keyframes cjmobile {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-65%);}
+    100%{transform: translateY(0);}
+}
+
 
 .mobile{
     position: absolute; 
