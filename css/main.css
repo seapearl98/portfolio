@@ -315,7 +315,7 @@ main>.title{
 .title>h2{
     width: 100%;
     position: absolute;
-    bottom: 50px; left: 50%;
+    bottom: 150px; left: 50%;
     transform: translateX(-50%);
     margin: 0;
     padding: 0;
