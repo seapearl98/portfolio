@@ -49,7 +49,7 @@ function toTop(){
 self.setTimeout("toTop()",9500);
 
 
-const projects = document.querySelectorAll('section');
+const projects = document.querySelectorAll('.page');
   console.log(projects);
 
   const projectNav = document.querySelectorAll(".navi");
@@ -76,9 +76,8 @@ devHeight = window.innerHeight;
 console.log(devHeight,"현재높이값")
 window.addEventListener('resize',()=>{
     devHeight = window.innerHeight;
-    console.log(devHeight) //현재높이값
 })
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll(".page");
 console.log(sections,"페이지 수")
 for(let i=0;i<sections.length;i++){
     sections[i].style.height = devHeight + 'px';
@@ -87,19 +86,20 @@ for(let i=0;i<sections.length;i++){
 
 window.addEventListener("scroll",e=>{
     let scroll = document.querySelector("html").scrollTop;
-    console.log(scroll,"스크롤값")
+    // console.log(scroll,"스크롤값")
     for(let i=0;i<sections.length;i++){
         if(scroll>=(i*devHeight) && scroll<(i+1)*devHeight){
-            activation(i,sections)
+            activation1(i,sections)
         }   
     }
 })
-let activation =(index,sections)=>{
+let activation1 =(index,sections)=>{
     for(let el of sections){
         el.classList.remove("on")
     }
     sections[index].classList.add("on")
 }
+console.log(activation1)
 
 
 
@@ -110,12 +110,12 @@ window.addEventListener("scroll", ()=>{
     
     for(let i=0; i<sections.length; i++){
         if(scroll >= i*devHeight && scroll < (i+1)*devHeight){
-            activation(i,sections);
+            activation1(i,sections);
         }
     }
 
 
-    let contents = document.querySelectorAll(".Page>section")
+    let contents = document.querySelectorAll(".page")
     for(let i=0; i<contents.length; i++){
         contents[i].addEventListener("wheel", e=>{
             if(e.wheelDelta >= 0){
@@ -150,3 +150,55 @@ for(let k=0;k<projectNav.length;k++){
         })
     })
 }
+
+// 숨긴nav보이기
+let sticky = document.querySelector(".sticky")
+window.addEventListener('scroll',()=>{ // 윈도우에서 스크롤을 움직이면
+  const projectPage = document.querySelectorAll(".project")
+  let scroll = document.querySelector('html').scrollTop; // 스크롤 값구하기
+
+  for(i=2;i<projects.length-1;i++){//스크롤 값에 따라서 클래스 함수발생.
+      if(scroll>=(i*devHeight) && scroll< [(i+1)*devHeight]){
+          act(i,projectNav);
+          sticky.classList.add("on")
+      }
+      if(scroll<(2*devHeight) || scroll>(5*devHeight)){
+          sticky.classList.remove("on")
+      }
+  }
+})
+let act = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채우는 함수
+  for(let el of projectNav){
+      el.classList.remove("on");
+  }
+  projectNav[idx-2].classList.add("on");
+} 
+
+
+  // for(let i=0;i<projectPage.length;i++){
+  //   projectPage[i].addEventListener("scroll",()=>{
+  //     if(projectPage[i].classList.contains("on")){
+  //       sticky.classList.add("on")
+  //     }
+  //   })
+  // }
+
+
+
+
+
+
+
+
+
+// let observer = new IntersectionObserver((e)=>{
+//   if(section.isIntersecting){
+//     sticky.classList.add("on")
+//   }
+// })
+
+// observer.observe(section[2])
+// observer.observe(section[3])
+// observer.observe(section[4])
+// observer.observe(section[5])
+
