@@ -759,12 +759,14 @@ div>.navbox>li>img{
     border: none;
     text-align: right;}
 .about>.about_totalbox>.leftbox>.skill>span{
+    align-items: center;
+    justify-content: center;
     position: relative;
-    top: -10px;
     border: none;
     display: inline-block;    
     font-size: 20px;
-    line-height: 20px;
+    line-height: 28px;
+    letter-spacing: 2px;
     padding-top: 0;
     font-family: 'Noto Sans KR','Roboto', sans-serif;
     font-weight: normal;}
