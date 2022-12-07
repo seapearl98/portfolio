@@ -264,7 +264,7 @@ section>.boxes{
 section>.boxes>.leftbox>.button{
     width: 65%;
     position: absolute;
-   bottom: -550px; left: 50%;
+   bottom: -500px; left: 50%;
     display: flex;
     transform: translateX(-50%);
 }
@@ -280,6 +280,50 @@ section>.boxes>.leftbox>.button>span{
 }
 section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
 
+/* katalk */
+#page5>.boxes>.leftbox{
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 700px;
+    height: 400px;
+}
+#page5>.boxes>.button{
+    position: absolute;
+   top: 425px; left: 450px;
+    display: inline-block;
+    transform: translateX(-50%);
+    border: 1px solid #000;
+}
+#page5>.boxes>.button>span{
+    font-size: 20px;
+    font-family: 'Roboto Serif', serif;
+    font-weight: bold;
+    padding: 15px 20px;
+    background: #FFF280;
+    color: #0049D8;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.25);
+}
+
+/* netflix button */
+#page6>.boxes>.leftbox>.button{
+    width: 36%;
+    position: absolute;
+   bottom: -500px; left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+section>.boxes>.leftbox>.button>span{
+    flex: content;
+    font-size: 20px;
+    font-family: 'Roboto Serif', serif;
+    font-weight: bold;
+    padding: 15px 20px;
+    background: #FFF280;
+    color: #0049D8;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.25);
+}
+
 .rightbox{
     z-index: 1;
     color: #fff;
@@ -293,6 +337,30 @@ section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
     border-bottom: 1px solid #fff;
 }
 .rightbox>dl>div>dt{
+    font-size: 24px;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
+}
+.rightbox>dl>div>dd{
+    font-size: 18px;
+    font-weight: 100;
+    filter: drop-shadow(1.5px 1.5px 0px rgba(0,0,0,0.15));
+    letter-spacing: 1px;
+}
+
+/* katalk */
+#page5 .rightbox{
+    z-index: 1;
+    color: #fff;
+    position: absolute;
+    top: 300px; right: 200px;
+    width: 35%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#page5 .rightbox>dl>div{
+    padding: 15px 0;
+    border-bottom: 1px solid #fff;
+}
+#page5 .rightbox>dl>div>dt{
     font-size: 24px;
     filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
 }
@@ -325,6 +393,31 @@ section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
     width: 100%;
     animation: cjdesk 15s linear infinite;
 }
+
+/* netflix */
+#page6 .desktop{
+    position: absolute; 
+    left: -100px; top: 70px;
+    display: inline-block;
+    z-index: 3; 
+    transform: scale(1.3); 
+}
+.desktop>img{
+    width: 500px;
+    filter: drop-shadow(-20px -20px 4px rgba(0,0,0,0.25));
+}
+.desktop>.inner{
+    position: absolute; top: 3%;
+    left: 50.4%; transform: translateX(-50%);
+    background: #fff;
+    width: 79.5%; height: 248.5px;
+    overflow: hidden;}
+.desktop>.inner>img{
+    width: 100%;
+    animation: cjdesk 15s linear infinite;
+}
+
+
 @keyframes cjdesk {
     0%{transform: translateY(0);}
     5%{transform: translateY(0);}
@@ -396,6 +489,65 @@ section>.boxes>.leftbox>.button>span:nth-of-type(1){margin-right: 20px;}
     border-radius: 18px;
     animation: cjmobile 15s linear infinite;
 }
+
+/* katalk */
+#page5 .mobile{
+    position: relative; 
+    z-index: 4; 
+    top: 20px; left: 50px;
+    transform: scale(0.3);
+    transition: all 1000ms cubic-bezier(0.000, 0.895, 0.595, 1.650);
+}
+#page5.on .mobile{transform: scale(1.8);}
+#page5 .mobile>img{
+    width: 150px;
+    filter: drop-shadow(20px 5px 4px rgba(0,0,0,0.3));
+}
+#page5 .mobile>.inner{
+    position: absolute;
+    box-sizing: border-box;
+    top: 2%; left: 50%;
+    transform: translateX(-50%);
+    background: #fdf;
+    width: 89.5%; height: 292px;
+    border-radius: 20px;
+    overflow: hidden;}
+#page5 .mobile>.inner>video{
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 50%; top: 0;
+    transform: translateX(-50%);
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* netflix */
+#page6 .mobile{
+    position: absolute; 
+    z-index: 4; 
+    top: 50px; right: -25%;
+    transform: scale(1.5);
+}
+.mobile>img{
+    width: 150px;
+    filter: drop-shadow(-40px -20px 4px rgba(0,0,0,0.25));
+}
+.mobile>.inner{
+    position: absolute;
+    box-sizing: border-box;
+    top: 2%; left: 50%;
+    transform: translateX(-50%);
+    background: #fdf;
+    width: 89.5%; height: 292px;
+    border-radius: 20px;
+    overflow: hidden;}
+.mobile>.inner>img{
+    position: absolute;
+    width: 100%;
+    border-radius: 18px;
+    animation: cjmobile 15s linear infinite;
+}
+
 /* title */
 .title{
     position: relative;
@@ -568,7 +720,7 @@ div>.navbox>li>img{
     width: 100%; height: 700px;}
 .about>.about_totalbox>.leftbox{
     position: relative;
-    left: -500px;
+    left: -500px; top: 50px;
     opacity: 0;
     box-sizing: border-box;
     padding: 10px;
@@ -590,54 +742,69 @@ div>.navbox>li>img{
     opacity: 1;
 }
 .about>.about_totalbox>.leftbox>div{
-    padding-bottom: 10px;
     width: 100%;
-    font-size: 42px;
-    border-bottom: 1px solid #fff;
+    font-size: 36px;
     filter: drop-shadow(5px 2px 0px rgba(0,0,0,0.1));    
 }
+.about>.about_totalbox>.leftbox>div:nth-child(1){padding-bottom: 15px;}
 .about>.about_totalbox>.leftbox span{
-    padding-bottom: 20px;
+    display: block;
+    font-size: 18px;
+    border-bottom: 1px solid #fff;
     filter: none;
+    line-height: 28px;
+    padding-bottom: 15px;
 }
 .about>.about_totalbox>.leftbox>.skill{
     border: none;
-    text-align: left;}
-.about>.about_totalbox>.leftbox>.skill>div{border-bottom: 1px solid #fff;}
-.about>.about_totalbox>.leftbox>.skill>span{    
+    text-align: right;}
+.about>.about_totalbox>.leftbox>.skill>span{
+    position: relative;
+    top: -10px;
+    border: none;
+    display: inline-block;    
     font-size: 20px;
+    line-height: 20px;
+    padding-top: 0;
     font-family: 'Noto Sans KR','Roboto', sans-serif;
     font-weight: normal;}
 .about>.about_totalbox>.leftbox>span{
     display: block;
-    padding: 10px 0 0 0;
     font-weight: normal;
-    font-size: 20px;
     font-family: 'Noto Sans KR','Roboto', sans-serif;
     font-weight: normal;
 }
 .about>.about_totalbox>.leftbox>.skill .underline{
     display: block;
     width: 100%; height: 1px;
-    background: rgb(150, 54, 54);
+    background: #fff;
 }
 .about>.about_totalbox>.leftbox>.github{
-    position: relative;
-                top: 15px;
-                font-size: 40px;
+                position: absolute;
+                top: 13px; left: 550px;
+                font-size: 20px;
+                line-height: 28px;
+                padding: 0px 12px;
+                border: 10px solid #2165F5;
+                border-style: double;
                 font-weight: 600;
                 display: inline-block;
                 background: #FFF280;
                 color: #0049D8;
-                padding: 0px 10px;
-                border-radius: 30px;
+                border-radius: 70px;
                 margin-bottom: 30px;
-                filter: drop-shadow(8px 8px 0px rgba(0,0,0,0.25));
-                text-shadow: 2px 2px 0px rgba(0,0,0,0.25);
+                /* filter: drop-shadow(6px 6px 0px rgba(0,0,0,0.2)); */
 }
+.about>.about_totalbox>.leftbox>.github:hover{ 
+    top: 15px; left: 552px;
+    background: #fff; }
+.about>.about_totalbox>.leftbox>.github:hover>a{color: #0049d8;}
+.about>.about_totalbox>.leftbox>.name{text-align: right;}
+.about>.about_totalbox>.leftbox>div.name{border-top: 1px solid #fff;}
+.about>.about_totalbox>.leftbox>.no{border: none; padding-bottom: 0;}
 .about>.about_totalbox>.rightbox{
     position: absolute;
-    top: 50px; right: -200px;
+    top: 100px; right: -200px;
     opacity: 0;
     width: 25%;
     display: inline-block;
@@ -650,11 +817,12 @@ div>.navbox>li>img{
 
 .about>.about_totalbox>.rightbox>.imgbox{
     position:   absolute;
+    filter: drop-shadow(30px 30px 0px rgba(0,0,0,0.2));
     width: 100%;}
 .about>.about_totalbox>.rightbox>.imgbox>img{
     position: absolute;
     width: 100%;
-    box-shadow: 40px 40px 0px #FFF280;
+    box-shadow: 20px 20px 0px #FFF280;
 }
 
 /* 마우스 */
@@ -681,9 +849,9 @@ body, body * {
   .shape.shape-1 {
     background: #f2ff02;
     opacity: 0.3;
-    width: 600px;
-    height: 600px;
-    margin: -300px;
+    width: 800px;
+    height: 800px;
+    margin: -400px;
     filter: brightness(10);
   }
   .shape.shape-2 {

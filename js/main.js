@@ -25,8 +25,122 @@ $(window).on('load', function() {
   }, 9900);
 });
 
+let id = 1,
+  pos = 0;
+let isScrolling = false;
+let keys = { 37: 1, 38: 1, 39: 1, 40: 1, 41: 1, 42: 1, 43: 1,44: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+function disableScroll() {
+  if (window.addEventListener) {
+    window.addEventListener("DOMMouseScroll", preventDefault, false); // FF
+    window.addEventListener("wheel", preventDefault, false); //chrome
+    window.addEventListener("mousewheel", preventDefault, false); //other browsers
+  }
+
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove = preventDefault; // mobile
+  document.onkeydown = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+  setTimeout(function () {
+    if (window.removeEventListener) {
+      window.removeEventListener("DOMMouseScroll", preventDefault, false);
+      window.removeEventListener("wheel", preventDefault, false); //chrome
+      window.removeEventListener("mousewheel", preventDefault, false); //other browsers
+    }
+
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
+  }, 200);
+}
+
+$(window).on("scroll", function () {
+  if (!isScrolling) {
+    isScroll();
+  } else {
+    disableScroll();
+  }
+});
+
+function isScroll() {
+  $(window).one("scroll", function (ev) {
+    if (!isScrolling) {
+      isScrolling = true;
+      var curPos = $(window).scrollTop();
+      if (curPos >= pos) {
+        // scrolling down
+        if (id < 7) {
+          id++;
+          $("html, body").animate(
+            {
+              scrollTop: $("#page" + id).offset().top
+            },
+            500,
+            function () {
+              isScrolling = false;
+              pos = $(window).scrollTop();
+              enableScroll();
+            }
+          );
+        } else {
+          isScrolling = false;
+          pos = $(window).scrollTop();
+          enableScroll();
+        }
+      } else {
+        //scrolling up
+        if (id > 1) {
+          id--;
+          $("html, body").animate(
+            {
+              scrollTop: $("#page" + id).offset().top
+            },
+            500,
+            function () {
+              isScrolling = false;
+              pos = $(window).scrollTop();
+              enableScroll();
+            }
+          );
+        } else {
+          isScrolling = false;
+          pos = $(window).scrollTop();
+          enableScroll();
+        }
+      }
+      pos = curPos;
+    } else {
+      disableScroll();
+    }
+  });
+}
+
+
+
+
+
+
+
 // js
-// 로딩이 완료되면 .on이 붙어서 폰트컬러 바꾸기
 const blink = document.querySelectorAll(".yellow")
 const loadingPage = document.querySelector(".load")
 const sparkle = document.querySelectorAll(".sparkle")
@@ -82,76 +196,66 @@ for(let i=0;i<projectNav.length; i++){
   })
 } 
 
-//스크롤
-let devHeight;
-devHeight = window.innerHeight;
-console.log(devHeight,"현재높이값")
-window.addEventListener('resize',()=>{
-    devHeight = window.innerHeight;
+
+
+
+
+let act = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채우는 함수
+  for(let el of projectNav){
+      el.classList.remove("on");
+  }
+  projectNav[idx-2].classList.add("on");
+} 
+
+// 마우스 효과
+document.body.addEventListener("mousemove", evt => {
+  const mouseX = evt.clientX;
+  const mouseY = evt.clientY;
+  
+  gsap.set(".cursor", {
+    x: mouseX,
+    y: mouseY
+  })
+  
+  gsap.to(".shape", {
+    x: mouseX,
+    y: mouseY,
+    stagger: -0.125
+  })
 })
+
+// 페이지에 on붙이기
+let nowHeight;
+nowHeight = window.innerHeight;
+window.addEventListener('resize',()=>{
+  nowHeight = window.innerHeight;
+})
+console.log(nowHeight)
+
 const sections = document.querySelectorAll(".page");
 console.log(sections,"페이지 수")
 for(let i=0;i<sections.length;i++){
-    sections[i].style.height = devHeight + 'px';
+    sections[i].style.height = nowHeight + 'px';
 }
 
 
-window.addEventListener("scroll",e=>{
+window.addEventListener("scroll",()=>{
     let scroll = document.querySelector("html").scrollTop;
-    // console.log(scroll,"스크롤값")
-    for(let i=0;i<sections.length;i++){
-        if(scroll>=(i*devHeight) && scroll<(i+1)*devHeight){
-            activation1(i,sections)
-        }   
-    }
+    for(let i=0;i<section.length;i++){
+      if(scroll>=(i*nowHeight) && scroll<(i+1)*nowHeight){
+          activation1(i,sections)
+      }   
+  }
 })
 let activation1 =(index,sections)=>{
-    for(let el of sections){
-        el.classList.remove("on")
-    }
-    sections[index].classList.add("on")
+  for(let el of sections){
+      el.classList.remove("on")
+  }
+  sections[index].classList.add("on")
 }
-console.log(activation1)
 
-
-
-
-window.addEventListener("scroll", ()=>{
-
-    let scroll = document.querySelector("html").scrollTop;
-    
-    for(let i=0; i<sections.length; i++){
-        if(scroll > i*devHeight && scroll < (i+1)*devHeight){
-            activation1(i,sections);
-        }
-    }
-
-
-    let contents = document.querySelectorAll(".page")
-    for(let i=0; i<contents.length; i++){
-        contents[i].addEventListener("wheel", e=>{
-            if(e.wheelDelta >= 0){
-                let prev = e.currentTarget.previousElementSibling.offsetTop;
-                window.scroll({
-                    top: prev,
-                    left: 0,
-                    behavior: "smooth"
-                    
-                });
-            }else if(e.wheelDelta <= 0){
-                let next = e.currentTarget.nextElementSibling.offsetTop;
-                window.scroll({
-                    top: next,
-                    left: 0,
-                    behavior: "smooth"
-                });
-            }
-        });
-    };
-})
 
 //navigation버튼 클릭시 해당페이지로 이동
-
 for(let k=0;k<projectNav.length;k++){
     projectNav[k].addEventListener("click",e=>{
         e.preventDefault();
@@ -169,66 +273,23 @@ window.addEventListener('scroll',()=>{ // 윈도우에서 스크롤을 움직이
   const projectPage = document.querySelectorAll(".project")
   let scroll = document.querySelector('html').scrollTop; // 스크롤 값구하기
 
-  for(i=2;i<projects.length-1;i++){//스크롤 값에 따라서 클래스 함수발생.
-      if(scroll>=(i*devHeight) && scroll <= [(i+1)*devHeight]){
-          act(i,projectNav);
+  for(j=2;j<projects.length-1;j++){//스크롤 값에 따라서 클래스 함수발생.
+      if(scroll>=(j*nowHeight) && scroll <= [(j+1)*nowHeight]){
+          act1(j,projectNav);
           sticky.classList.add("on")
       }
-      if(scroll<(2*devHeight) || scroll>(5*devHeight)){
+      if(scroll<(2*nowHeight) || scroll>(5*nowHeight)){
           sticky.classList.remove("on")
       }
   }
 })
-let act = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채우는 함수
+let act1 = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채우는 함수
   for(let el of projectNav){
       el.classList.remove("on");
   }
   projectNav[idx-2].classList.add("on");
 } 
 
-
-  // for(let i=0;i<projectPage.length;i++){
-  //   projectPage[i].addEventListener("scroll",()=>{
-  //     if(projectPage[i].classList.contains("on")){
-  //       sticky.classList.add("on")
-  //     }
-  //   })
-  // }
-
-
-
-
-
-
-
-
-
-// let observer = new IntersectionObserver((e)=>{
-//   if(section.isIntersecting){
-//     sticky.classList.add("on")
-//   }
-// })
-
-// observer.observe(section[2])
-// observer.observe(section[3])
-// observer.observe(section[4])
-// observer.observe(section[5])
-
-// 마우스 효과
-document.body.addEventListener("mousemove", evt => {
-  const mouseX = evt.clientX;
-  const mouseY = evt.clientY;
-  
-  gsap.set(".cursor", {
-    x: mouseX,
-    y: mouseY
-  })
-  
-  gsap.to(".shape", {
-    x: mouseX,
-    y: mouseY,
-    stagger: -0.05
-  })
-})
-
-// 메인 모션
+// window.onbeforeunload = function() {
+//   window.scrollTo(0, 0);
+// };
