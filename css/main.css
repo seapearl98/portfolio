@@ -114,11 +114,10 @@ a,a:visited{
     text-align: center;
     overflow: hidden;
     background: #2165F5;
-    transition: top 0.5s ease-in-out 0s;
+    transition: height 0.3s ease 0s;
 }
 .load.totop{
-    position: absolute;
-    top: -100vh;
+    height: 0;
 }
 
 @keyframes totop {
