@@ -19,6 +19,11 @@ var i = 0;
   i++;
 }());
 
+$(window).on('load', function() {
+  setTimeout(function() {
+      document.body.classList.remove('no-scroll');
+  }, 9900);
+});
 
 // js
 // 로딩이 완료되면 .on이 붙어서 폰트컬러 바꾸기
@@ -26,6 +31,7 @@ const blink = document.querySelectorAll(".yellow")
 const loadingPage = document.querySelector(".load")
 const sparkle = document.querySelectorAll(".sparkle")
 const section = document.querySelectorAll("section")
+const title = document.querySelector(".title")
 console.log(section)
 
 function colorChange(){
@@ -45,8 +51,14 @@ function toTop(){
   section.forEach(element => {
     element.style.display = "block";
   });
+  
 }
 self.setTimeout("toTop()",9500);
+
+function on(){
+  title.classList.add("on")
+}
+self.setTimeout("on()",9900);
 
 
 const projects = document.querySelectorAll('.page');
@@ -109,7 +121,7 @@ window.addEventListener("scroll", ()=>{
     let scroll = document.querySelector("html").scrollTop;
     
     for(let i=0; i<sections.length; i++){
-        if(scroll >= i*devHeight && scroll < (i+1)*devHeight){
+        if(scroll > i*devHeight && scroll < (i+1)*devHeight){
             activation1(i,sections);
         }
     }
@@ -158,7 +170,7 @@ window.addEventListener('scroll',()=>{ // 윈도우에서 스크롤을 움직이
   let scroll = document.querySelector('html').scrollTop; // 스크롤 값구하기
 
   for(i=2;i<projects.length-1;i++){//스크롤 값에 따라서 클래스 함수발생.
-      if(scroll>=(i*devHeight) && scroll< [(i+1)*devHeight]){
+      if(scroll>=(i*devHeight) && scroll <= [(i+1)*devHeight]){
           act(i,projectNav);
           sticky.classList.add("on")
       }
@@ -202,3 +214,21 @@ let act = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채�
 // observer.observe(section[4])
 // observer.observe(section[5])
 
+// 마우스 효과
+document.body.addEventListener("mousemove", evt => {
+  const mouseX = evt.clientX;
+  const mouseY = evt.clientY;
+  
+  gsap.set(".cursor", {
+    x: mouseX,
+    y: mouseY
+  })
+  
+  gsap.to(".shape", {
+    x: mouseX,
+    y: mouseY,
+    stagger: -0.05
+  })
+})
+
+// 메인 모션

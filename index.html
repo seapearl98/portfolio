@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/myfavicon.png">
     <script src="https://kit.fontawesome.com/3732862d16.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script defer src="js/main.js"></script>
     <title>이해주의 포트폴리오</title>
 </head>
-<body>
+<body class="no-scroll">
+    <div class="cursor"></div>
+    <div class="shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
     <div class="sticky">
         <ul class='navbox'>
             <li class='navi on'>
@@ -40,10 +48,13 @@
         </div>
         <div class="loadtext yellow" id="type"></div>
     </div>
-    <section class="title page">
+    <section class="title page content">
+        <div class="scroll-type3">
+            <div class="scroll-icon"></div>
+          </div>
         <h1 id="text">FRONT-END</h1>
         <span id="text" class='developer'>DEVELOPER</span>
-        <h2 id="text">Welcome to HAEJOO's Portfolio!</h2>
+        <h2>Welcome to HAEJOO's Portfolio!</h2>
     </section>
     <section class="about page">
         <div class='me'>
@@ -56,24 +67,19 @@
                     <div class="name">Name</div>
                     <span>이해주</span>
                     <div>Introduce</div>
-                    <span>어제보다 오늘 더 성장하는 프론트엔드, 이해주입니다.</span>
-                    <div class='underline'></div>
+                    <span>매일매일 나아지는 프론트엔드, 이해주입니다.</span>
                 <div class='skill'>
                     <div>Skill</div>
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>Javascript</span>
-                    <span>React</span>
-                    <span>Sass</span>
+                    <span><i class="fa-brands fa-html5"></i>HTML5</span>
+                    <span><i class="fa-brands fa-css3-alt"></i>CSS3</span>
+                    <span><i class="fa-brands fa-square-js"></i>Javascript</span>
+                    <span><i class="fa-brands fa-react"></i>React</span>
+                    <span><i class="fa-brands fa-sass"></i>Sass</span>
                     <span>Axios</span>
                     <span>Firebase</span>
                     <span>Photoshop</span>
-                    <span>Figma</span>
+                    <span><i class="fa-brands fa-figma"></i>Figma</span>
                     <span>Ilustrator</span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                     <div class='underline'></div>
                 </div>
             </div>
@@ -112,45 +118,46 @@
                     <span><a href="https://seapearl98.github.io/CJONE/" target='_blank'>visit website</a></span>
                 </div>
             </div>
+            <div class="background"></div>
             <div class='rightbox'>
                 <dl>
                     <div>
                         <dt>기여도</dt>
-                        <dd>100%</dd>
+                        <dd>- 100%</dd>
                     </div>
                     <div>
                         <dt>사용언어</dt>
-                        <dd>HTML, CSS, Javascript</dd>
+                        <dd>- HTML, CSS, Javascript</dd>
                     </div>
                     <div>
                         <dt>프로젝트 개요</dt>
-                        <dd>CJ ONE의 웹페이지를 해당 화면의 해상도에 따라 자동으로 레이아웃이 변경되는 반응형 웹페이지로 제작하였습니다.</dd>
+                        <dd>- CJ ONE의 웹페이지를 해당 화면의 해상도에 따라 자동으로 레이아웃이 변경되는 반응형 웹페이지로 제작하였습니다.</dd>
                     </div>
                     <div>
                         <dt>주요업무</dt>
-                        <dd>웹 접근성 준수</dd>
-                        <dd>HTML, CSS W3C 유효성 검사 통과</dd>
-                        <dd>CSS 미디어 쿼리를 이용한 해상도 변경에 따른 PC, Tablet, mobile 화면 변경 작업</dd>
-                        <dd>Javascript를 사용한 헤더, 배너,버튼 등 사용자와 상호작용이 가능한 기능 구현</dd>
+                        <dd>- 웹 접근성 준수</dd>
+                        <dd>- HTML, CSS W3C 유효성 검사 통과</dd>
+                        <dd>- CSS 미디어 쿼리를 이용한 해상도 변경에 따른 PC, Tablet, mobile 화면 변경 작업</dd>
+                        <dd>- Javascript를 사용한 헤더, 배너,버튼 등 사용자와 상호작용이 가능한 기능 구현</dd>
                     </div>
                 </dl>
             </div>
         </div>
     </section>
     <section class="project page">
-        <h2>project<span>ATWOM</span></h2>
+        <h2>project <span>ATWOM</span></h2>
         <div class='boxes'>
             <div class='leftbox'>
                 <div class='desktop'>
                     <img src="img/desktop.png" alt="데스크탑 목업" />
                     <div class='inner'>
-                    <img src="img/cj_desk.jpeg" alt="cj데스크탑사이즈 이미지" />  
+                    <img src="img/atwom_tablet.jpeg" alt="cj데스크탑사이즈 이미지" />  
                     </div>
                 </div>
                 <div class='tablet'>
                     <img src="img/tablet.png" alt="타블렛 목업" />
                     <div class='inner'>
-                    <img src="img/cj_tablet.jpeg" alt="cj타블렛사이즈이미지"/>  
+                    <img src="img/atwom_tablet.jpeg" alt="cj타블렛사이즈이미지"/>  
                     </div>
                 </div>
                 <div class='mobile'>
@@ -164,27 +171,28 @@
                     <span><a href="https://seapearl98.github.io/CJONE/" target='_blank'>visit website</a></span>
                 </div>
             </div>
+            <div class="background"></div>
             <div class='rightbox'>
                 <dl>
                     <div>
                         <dt>기여도</dt>
-                        <dd>100%</dd>
+                        <dd>- 100%</dd>
                     </div>
                     <div>
                         <dt>사용언어</dt>
-                        <dd>HTML, CSS, Javascript</dd>
+                        <dd>- HTML, CSS, Javascript</dd>
                     </div>
                     <div>
                         <dt>프로젝트 개요</dt>
-                        <dd>기업 ATWOM의 웹페이지를 해당 화면의 해상도에 따라 자동으로 레이아웃이 변경되는 반응형 웹페이지로 제작하였습니다.</dd>
+                        <dd>- 기업 ATWOM의 웹페이지를 해당 화면의 해상도에 따라 자동으로 레이아웃이 변경되는 반응형 웹페이지로 제작하였습니다.</dd>
                     </div>
                     <div>
                         <dt>주요업무</dt>
-                        <dd>웹 접근성 준수</dd>
-                        <dd>HTML, CSS W3C 유효성 검사 통과</dd>
-                        <dd>CSS 미디어 쿼리를 이용한 해상도 변경에 따른 PC, Tablet, mobile 화면 변경 작업</dd>
-                        <dd>Javascript를 사용한 one-scroll-page 구현</dd>
-                        <dd>화면의 변화에 따라 나타나는 transition과 animation효과 구현</dd>
+                        <dd>- 웹 접근성 준수</dd>
+                        <dd>- HTML, CSS W3C 유효성 검사 통과</dd>
+                        <dd>- CSS 미디어 쿼리를 이용한 해상도 변경에 따른 PC, Tablet, mobile 화면 변경 작업</dd>
+                        <dd>- Javascript를 사용한 one-scroll-page 구현</dd>
+                        <dd>- 화면의 변화에 따라 나타나는 transition과 animation효과 구현</dd>
                     </div>
                 </dl>
             </div>
@@ -215,27 +223,28 @@
                 <div class='button'>
                     <span><a href="https://seapearl98.github.io/CJONE/" target='_blank'>visit website</a></span>
                 </div>
+                <div class="background"></div>
             </div>
             <div class='rightbox'>
                 <dl>
                     <div>
                         <dt>기여도</dt>
-                        <dd>100%</dd>
+                        <dd>- 100%</dd>
                     </div>
                     <div>
                         <dt>사용언어</dt>
-                        <dd>SCSS,React,Sass,JSX,Axios,Firebase</dd>
+                        <dd>- SCSS,React,Sass,JSX,Axios,Firebase</dd>
                     </div>
                     <div>
                         <dt>프로젝트 개요</dt>
-                        <dd>React를 이용하여 JSX문법과 Sass로 Scss를 적용하여 SPA로 제작되었으며 회원가입, 프로필 설정,채팅입력 등 카카오톡 앱의 기본적인 기능들을 구현했습니다.</dd>
+                        <dd>- React를 이용하여 JSX문법과 Sass로 Scss를 적용하여 SPA로 제작되었으며 회원가입, 프로필 설정,채팅입력 등 카카오톡 앱의 기본적인 기능들을 구현했습니다.</dd>
                     </div>
                     <div>
                         <dt>주요업무</dt>
-                        <dd>Axios를 사용한 Api 호출</dd>
-                        <dd>Firebase를 활용한 사용자 정보 저장 및 불러오기</dd>
-                        <dd>Hook 함수(useEffect, useState)를 활용한 데이터 전달 및 관리</dd>
-                        <dd>Sass의 Scss를 활용한 카카오톡 앱 디자인 구현</dd>
+                        <dd>- Axios를 사용한 Api 호출</dd>
+                        <dd>- Firebase를 활용한 사용자 정보 저장 및 불러오기</dd>
+                        <dd>- Hook 함수(useEffect, useState)를 활용한 데이터 전달 및 관리</dd>
+                        <dd>- Sass의 Scss를 활용한 카카오톡 앱 디자인 구현</dd>
                     </div>
                 </dl>
             </div>
@@ -267,23 +276,24 @@
                     <span><a href="https://seapearl98.github.io/CJONE/" target='_blank'>visit website</a></span>
                 </div>
             </div>
+            <div class="background"></div>
             <div class='rightbox'>
                 <dl>
                     <div>
                         <dt>기여도</dt>
-                        <dd>100%</dd>
+                        <dd>- 100%</dd>
                     </div>
                     <div>
                         <dt>사용언어</dt>
-                        <dd>HTML, CSS, Javascript</dd>
+                        <dd>- HTML, CSS, Javascript</dd>
                     </div>
                     <div>
                         <dt>프로젝트 개요</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quod molestiae nisi! Alias qui deserunt repudiandae veniam omnis cupiditate nesciunt minima similique, modi aliquid esse tempore obcaecati est iure exercitationem?</dd>
+                        <dd>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quod molestiae nisi! Alias qui deserunt repudiandae veniam omnis cupiditate nesciunt minima similique, modi aliquid esse tempore obcaecati est iure exercitationem?</dd>
                     </div>
                     <div>
                         <dt>주요업무</dt>
-                        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sit autem reprehenderit tenetur vero magni, quasi fuga! Repellat nam ea iusto sit ipsam magni, optio voluptatibus est nisi hic sunt!</dd>
+                        <dd>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sit autem reprehenderit tenetur vero magni, quasi fuga! Repellat nam ea iusto sit ipsam magni, optio voluptatibus est nisi hic sunt!</dd>
                     </div>
                 </dl>
             </div>
