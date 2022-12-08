@@ -7,11 +7,18 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">   
     <script src="https://kit.fontawesome.com/3732862d16.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.0/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script defer src="js/main.js"></script>
     <title>이해주의 포트폴리오</title>
+    <script>
+        const windowOpen = () => {
+        window.open("https://seapearl98.github.io/kakaotalk/","KA_TALK","width=375,height=750,fullscreen=no,resizable=yes")
+    }  
+    </script>
 </head>
 <body class="no-scroll">
     <div class="cursor"></div>
@@ -236,7 +243,7 @@
                     </div>
                 </div>
                 <div class='button'>
-                    <span><a href="https://seapearl98.github.io/kakaotalk/" target='_blank'>visit website</a></span>
+                    <span><a onclick="windowOpen()">visit website</a></span>
                 </div>
             </div>
             <div class="background"></div>
@@ -260,7 +267,7 @@
                         <dd>- Firebase를 활용한 사용자 정보 저장 및 불러오기</dd>
                         <dd>- Hook 함수(useEffect, useState)를 활용한 데이터 전달 및 관리</dd>
                         <dd>- Sass의 Scss를 활용한 카카오톡 앱 디자인 구현</dd>
-                        <dd>- React-Router-dom을 활용한 spa구현</dd>
+                        <dd>- React-Router-dom을 활용한 SPA구현</dd>
                     </div>
                 </dl>
             </div>
@@ -309,7 +316,7 @@
         </div>
     </section>
     <section id="page7" class="contact page">
-        <h2>CONTACT</h2>
+        <h2 class="wiggle-it" data-splitting>CONTACT</h2>
         <div class='contact_box'>
         <div class='box_inner'>
         <p class='tel'>tel. 010-5953-5133</p>

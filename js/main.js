@@ -218,3 +218,7 @@ let act1 = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채�
 // window.onbeforeunload = function() {
 //   window.scrollTo(0, 0);
 // };
+
+console.clear();
+
+var s = Splitting();
