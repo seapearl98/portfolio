@@ -25,120 +25,6 @@ $(window).on('load', function() {
   }, 9900);
 });
 
-let id = 1,
-  pos = 0;
-let isScrolling = false;
-let keys = { 37: 1, 38: 1, 39: 1, 40: 1, 41: 1, 42: 1, 43: 1,44: 1};
-
-function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
-  e.returnValue = false;
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
-}
-
-function disableScroll() {
-  if (window.addEventListener) {
-    window.addEventListener("DOMMouseScroll", preventDefault, false); // FF
-    window.addEventListener("wheel", preventDefault, false); //chrome
-    window.addEventListener("mousewheel", preventDefault, false); //other browsers
-  }
-
-  window.onwheel = preventDefault; // modern standard
-  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-  window.ontouchmove = preventDefault; // mobile
-  document.onkeydown = preventDefaultForScrollKeys;
-}
-
-function enableScroll() {
-  setTimeout(function () {
-    if (window.removeEventListener) {
-      window.removeEventListener("DOMMouseScroll", preventDefault, false);
-      window.removeEventListener("wheel", preventDefault, false); //chrome
-      window.removeEventListener("mousewheel", preventDefault, false); //other browsers
-    }
-
-    window.onmousewheel = document.onmousewheel = null;
-    window.onwheel = null;
-    window.ontouchmove = null;
-    document.onkeydown = null;
-  }, 200);
-}
-
-$(window).on("scroll", function () {
-  if (!isScrolling) {
-    isScroll();
-  } else {
-    disableScroll();
-  }
-});
-
-function isScroll() {
-  $(window).one("scroll", function (ev) {
-    if (!isScrolling) {
-      isScrolling = true;
-      var curPos = $(window).scrollTop();
-      if (curPos >= pos) {
-        // scrolling down
-        if (id < 7) {
-          id++;
-          $("html, body").animate(
-            {
-              scrollTop: $("#page" + id).offset().top
-            },
-            500,
-            function () {
-              isScrolling = false;
-              pos = $(window).scrollTop();
-              enableScroll();
-            }
-          );
-        } else {
-          isScrolling = false;
-          pos = $(window).scrollTop();
-          enableScroll();
-        }
-      } else {
-        //scrolling up
-        if (id > 1) {
-          id--;
-          $("html, body").animate(
-            {
-              scrollTop: $("#page" + id).offset().top
-            },
-            500,
-            function () {
-              isScrolling = false;
-              pos = $(window).scrollTop();
-              enableScroll();
-            }
-          );
-        } else {
-          isScrolling = false;
-          pos = $(window).scrollTop();
-          enableScroll();
-        }
-      }
-      pos = curPos;
-    } else {
-      disableScroll();
-    }
-  });
-}
-
-
-
-
-
-
 
 // js
 const blink = document.querySelectorAll(".yellow")
@@ -260,12 +146,51 @@ for(let k=0;k<projectNav.length;k++){
     projectNav[k].addEventListener("click",e=>{
         e.preventDefault();
         window.scroll({
-            top:(k+2)*devHeight,
+            top:(k+2)*nowHeight,
             left:0,
             behavior:'smooth'
         })
     })
 }
+
+window.addEventListener("scroll", ()=>{
+
+  let scroll = document.querySelector("html").scrollTop;
+  
+  for(let i=0; i<sections.length; i++){
+      if(scroll >= i*nowHeight && scroll <= (i+1)*nowHeight){
+          activation1(i,sections);
+      }
+  }
+
+
+  let contents = document.querySelectorAll(".page")
+  for(let i=0; i<contents.length; i++){
+      contents[i].addEventListener("wheel", e=>{
+          if(e.wheelDelta > 0){
+              let prev = e.currentTarget.previousElementSibling.offsetTop;
+              window.scroll({
+                  top: prev,
+                  left: 0,
+                  behavior: "smooth"
+                  
+              });
+          }else if(e.wheelDelta < 0){
+              let next = e.currentTarget.nextElementSibling.offsetTop;
+              window.scroll({
+                  top: next,
+                  left: 0,
+                  behavior: "smooth"
+              });
+          }
+      });
+  };
+})
+
+
+
+
+
 
 // 숨긴nav보이기
 let sticky = document.querySelector(".sticky")

@@ -114,9 +114,10 @@ a,a:visited{
     text-align: center;
     overflow: hidden;
     background: #2165F5;
-    transition: height 0.3s ease 0s;
+    transition: height 0.3s ease 0.3s;
 }
 .load.totop{
+    background: #FFF280;
     height: 0;
 }
 
@@ -204,6 +205,7 @@ a,a:visited{
 }
 
 .bulb.colorChange{transform: scale(100);}
+.yellow.colorChange{filter: none;}
 
 /* 각섹션 */
 
@@ -986,3 +988,5 @@ body, body * {
     top: 0;
     opacity: 1;
   }
+
+html,body{width: 100%;height: 100%;}
