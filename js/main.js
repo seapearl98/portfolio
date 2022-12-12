@@ -141,7 +141,7 @@ let activation1 =(index,sections)=>{
 }
 
 
-//navigation버튼 클릭시 해당페이지로 이동
+// navigation버튼 클릭시 해당페이지로 이동
 for(let k=0;k<projectNav.length;k++){
     projectNav[k].addEventListener("click",e=>{
         e.preventDefault();
@@ -158,7 +158,7 @@ window.addEventListener("scroll", ()=>{
   let scroll = document.querySelector("html").scrollTop;
   
   for(let i=0; i<sections.length; i++){
-      if(scroll >= i*nowHeight && scroll <= (i+1)*nowHeight){
+      if(scroll >= i*nowHeight && scroll < (i+1)*nowHeight){
           activation1(i,sections);
       }
   }
@@ -167,7 +167,7 @@ window.addEventListener("scroll", ()=>{
   let contents = document.querySelectorAll(".page")
   for(let i=0; i<contents.length; i++){
       contents[i].addEventListener("wheel", e=>{
-          if(e.wheelDelta > 0){
+          if(e.wheelDelta >= 0){
               let prev = e.currentTarget.previousElementSibling.offsetTop;
               window.scroll({
                   top: prev,
@@ -175,7 +175,7 @@ window.addEventListener("scroll", ()=>{
                   behavior: "smooth"
                   
               });
-          }else if(e.wheelDelta < 0){
+          }else if(e.wheelDelta <= 0){
               let next = e.currentTarget.nextElementSibling.offsetTop;
               window.scroll({
                   top: next,
@@ -215,9 +215,9 @@ let act1 = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채�
   projectNav[idx-2].classList.add("on");
 } 
 
-// window.onbeforeunload = function() {
-//   window.scrollTo(0, 0);
-// };
+window.onbeforeunload = function() {
+  window.scrollTo(0, 0);
+};
 
 console.clear();
 
