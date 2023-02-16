@@ -245,15 +245,14 @@ a,a:visited{
     margin-top: 100px;
 }
 .project>.boxes>.leftbox{
-    position: relative; top: 10%; left: -1000px;
+    position: relative; top: 10%; left: 0;
     background: #FFF280;
     width: 35%;
     height: 65%;
-    transition: all 800ms cubic-bezier(0.000, 0.895, 0.595, 1.650) 0.5s;
 }
-.project.on>.boxes>.leftbox{
+/* .project.on>.boxes>.leftbox{
     left: 0;
-}
+} */
 .project.on>.boxes>.background{
     position: absolute;
     top: -50px; left: -100px;
@@ -499,10 +498,10 @@ a,a:visited{
     position: relative; 
     z-index: 4; 
     top: 20px; left: 50px;
-    transform: scale(0.3);
-    transition: all 1000ms cubic-bezier(0.000, 0.895, 0.595, 1.650);
+    transform: scale(1.8);
+    /* transition: all 1000ms cubic-bezier(0.000, 0.895, 0.595, 1.650); */
 }
-#page5.on .mobile{transform: scale(1.8);}
+/* #page5.on .mobile{transform: scale(1.8);} */
 #page5 .mobile>img{
     width: 150px;
     filter: drop-shadow(20px 5px 4px rgba(0,0,0,0.3));
@@ -560,7 +559,7 @@ a,a:visited{
     color: #fff; 
     box-sizing: border-box;
 }
-.title>#text{opacity: 0;}
+.title>#text{opacity: 1;}
 .title>h1{
     display: inline-block;
     position: absolute;
@@ -599,7 +598,7 @@ a,a:visited{
     text-shadow: -2px 0px 0px rgba(0,0,0,0.1);
     box-sizing: border-box;
     letter-spacing: 2px;
-    opacity: 0;
+    opacity: 1;
 }
 
 
@@ -678,11 +677,8 @@ div>.navbox>li>img{
     width: 600px; height: 300px;
     background: #fff;
     box-shadow: 40px 40px 0px rgba(0,0,0,0.25);
-    opacity: 0;
-}
-.contact.on>.contact_box{
     opacity: 1;
-    animation: box-inner 1.2s linear 1;}
+}
 .box_inner{
     position: absolute;
     left: 50%; transform: translateX(-50%) translateY(-50%);
@@ -690,15 +686,6 @@ div>.navbox>li>img{
     width: 95%; height: 90%;
     background: #fff;
     border: 2px solid #0049D8;
-}
-
-@keyframes box-inner {
-    0%{top: -100%;}
-    70%{top: 40%;}
-    80%{top: 60%;}
-    85%{top: 48%;}
-    90%{top: 52%;}
-    100%{top: 50%;}
 }
 
 .box_inner>p{
@@ -719,18 +706,12 @@ div>.navbox>li>img{
 .about>.me{
     position: relative;
     left: 0; top: 0;
-    opacity: 0;
+    opacity: 1;
     color: #fff; 
     font-size: 4rem;
     font-family: 'Roboto Serif', serif;
-    transition: top 0.7s cubic-bezier(0.000, 1.035, 0.470, 1.485) 0s;
     filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
 }
-.about.on>.me{
-    opacity: 1;
-    top: 0;
-}
-
 .name{text-align: left;}
 
 .about>.about_totalbox{
@@ -742,8 +723,8 @@ div>.navbox>li>img{
     width: 100%; height: 700px;}
 .about>.about_totalbox>.leftbox{
     position: relative;
-    left: -500px; top: 50px;
-    opacity: 0;
+    left: 0; top: 50px;
+    opacity: 1;
     box-sizing: border-box;
     padding: 10px;
     margin-top: 50px;
@@ -759,10 +740,6 @@ div>.navbox>li>img{
     transition: all 1s cubic-bezier(0.000, 1.035, 0.470, 1.485) 0.3s;
 }
 
-.about.on>.about_totalbox>.leftbox{
-    left: 0;
-    opacity: 1;
-}
 .about>.about_totalbox>.leftbox>div{
     width: 100%;
     font-size: 36px;
@@ -828,15 +805,11 @@ div>.navbox>li>img{
 .about>.about_totalbox>.leftbox>.no{border: none; padding-bottom: 0;}
 .about>.about_totalbox>.rightbox{
     position: absolute;
-    top: 100px; right: -200px;
-    opacity: 0;
+    top: 100px; right: 200px;
+    opacity: 1;
     width: 25%;
     display: inline-block;
     transition: all 1s cubic-bezier(0.000, 1.035, 0.470, 1.485) 0.7s;
-}
-.about.on>.about_totalbox>.rightbox{
-    right: 200px;
-    opacity: 1;
 }
 
 .about>.about_totalbox>.rightbox>.imgbox{
@@ -987,8 +960,8 @@ body, body * {
 
 .project>h2{
     position: relative;
-    top: -300px;
-    opacity: 0 ;
+    top: 0px;
+    opacity: 1;
     padding-top: 70px;
     display: inline-block;
     font-style: italic;

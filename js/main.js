@@ -1,3 +1,5 @@
+"use strict"; //'use strict'
+
 // jquery
 
 var str = 'L O A D I N G . . .';
@@ -30,7 +32,7 @@ $(window).on('load', function() {
 const blink = document.querySelectorAll(".yellow")
 const loadingPage = document.querySelector(".load")
 const sparkle = document.querySelectorAll(".sparkle")
-const section = document.querySelectorAll("section")
+const section = document.querySelectorAll(".section")
 const title = document.querySelector(".title")
 console.log(section)
 
@@ -122,13 +124,14 @@ const sections = document.querySelectorAll(".page");
 console.log(sections,"페이지 수")
 for(let i=0;i<sections.length;i++){
     sections[i].style.height = nowHeight + 'px';
+    sections[i].classList.add('on')
 }
 
 
 window.addEventListener("scroll",()=>{
     let scroll = document.querySelector("html").scrollTop;
     for(let i=0;i<section.length;i++){
-      if(scroll>=(i*nowHeight) && scroll<(i+1)*nowHeight){
+      if(scroll>=i*nowHeight && scroll<(i+1)*nowHeight){
           activation1(i,sections)
       }   
   }
@@ -158,7 +161,7 @@ window.addEventListener("scroll", ()=>{
   let scroll = document.querySelector("html").scrollTop;
   
   for(let i=0; i<sections.length; i++){
-      if(scroll >= i*nowHeight && scroll < (i+1)*nowHeight){
+      if(scroll >= 0 && scroll < (i+1)*nowHeight){
           activation1(i,sections);
       }
   }
@@ -167,7 +170,7 @@ window.addEventListener("scroll", ()=>{
   let contents = document.querySelectorAll(".page")
   for(let i=0; i<contents.length; i++){
       contents[i].addEventListener("wheel", e=>{
-          if(e.wheelDelta >= 0){
+          if(e.wheelDelta > 0){
               let prev = e.currentTarget.previousElementSibling.offsetTop;
               window.scroll({
                   top: prev,
@@ -175,7 +178,7 @@ window.addEventListener("scroll", ()=>{
                   behavior: "smooth"
                   
               });
-          }else if(e.wheelDelta <= 0){
+          }else if(e.wheelDelta < 0){
               let next = e.currentTarget.nextElementSibling.offsetTop;
               window.scroll({
                   top: next,
@@ -218,7 +221,5 @@ let act1 = (idx,projectNav) => {//스크롤이벤트 발생시 .on지우고 채�
 window.onbeforeunload = function() {
   window.scrollTo(0, 0);
 };
-
-console.clear();
 
 var s = Splitting();
